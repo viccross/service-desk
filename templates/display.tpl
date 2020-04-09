@@ -107,6 +107,9 @@
                      {if $checkpasswordresult eq 'ldaperror'}
                      <div class="alert alert-danger"><i class="fa fa-fw fa-exclamation-triangle"></i> {$msg_passwordinvalid}</div>
                      {/if}
+                     {if $checkpasswordresult eq 'passwordexpired'}
+                     <div class="alert alert-warning"><i class="fa fa-fw fa-check"></i> {$msg_passwordexpired}</div>
+                     {/if}
                      {if $checkpasswordresult eq 'passwordok'}
                      <div class="alert alert-success"><i class="fa fa-fw fa-check"></i> {$msg_passwordok}</div>
                      {/if}
