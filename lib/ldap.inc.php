@@ -27,7 +27,14 @@ function wp_ldap_connect($ldap_url, $ldap_starttls, $ldap_binddn, $ldap_bindpw) 
         } else {
             error_log("LDAP - Bind error");
         }
-        return array(false, "ldaperror");
+        $errormsg = "ldaperror";
+        ldap_get_option($ldap, LDAP_OPT_ERROR_STRING, $ldapmsg);
+        if ( $errno == "49" ) {
+            if ( strpos( $ldapmsg, "expired") ) {
+                $errormsg = "passwordexpired";
+            }
+        }
+        return array(false, $errormsg );
     }
 
     return array($ldap, false);
