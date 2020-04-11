@@ -16,4 +16,4 @@ before_install:
 script: phpunit tests
 
 notifications:
-  irc: "irc.freenode.org#ltb-project"
+#  irc: "irc.freenode.org#ltb-project"
