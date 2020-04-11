@@ -100,3 +100,5 @@ You need to define where Smarty is installed:
 
     define("SMARTY", "/usr/share/php/smarty3/Smarty.class.php");
 
+For Smarty to be able to successfully 'compile' pages from the templates, the directory "template_c" must be writable by the web server.
+
