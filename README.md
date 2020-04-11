@@ -1,4 +1,4 @@
-# Service Desk
+# Service Desk - RACF
 
 [![Documentation Status](https://readthedocs.org/projects/service-desk-racf/badge/?version=latest)](https://service-desk-racf.readthedocs.io/en/latest/?badge=latest)
 [![Build Status](https://travis-ci.org/ltb-project/service-desk.svg?branch=master)](https://travis-ci.org/ltb-project/service-desk)
