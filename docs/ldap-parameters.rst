@@ -50,6 +50,14 @@ You can set global base in ``$ldap_base``:
 .. code-block:: php
 
     $ldap_base = "dc=example,dc=com";
+    
+In a RACF environment (with ``$racf_mode = true``), the LDAP tree pointed to by ``$ldap_base`` should use a "standard" RFC 2307-style schema.  This would be, say, your z/VM LDAP LDBM with Native Authenticaation, or OpenLDAP with slapo-rwm to redirect binds to SDBM.  Your RACF SDBM will be at a different base, and some operations need this base to work directly on SDBM.  Set this using ``$sdbm_base``:
+
+.. code-block:: php
+
+    $sdbm_base = "o=ZVMSSI1";
+    
+Setting ``$sdbm_base`` also enables full RACF administration access (under development).
 
 User search parameters
 ----------------------
