@@ -13,6 +13,10 @@
                 <img src="{$logo}" alt="{$msg_title}" class="menu-logo img-responsive" />
                 {$msg_title}
               </a>
+              <a class="navbar-brand" href="index.php?page=sdbmmain">
+                <img src="{$logo}" alt="{$msg_sdbmmain}" class="menu-logo img-responsive" />
+                {$msg_sdbmmain}
+              </a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">

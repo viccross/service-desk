@@ -22,3 +22,11 @@
 {if $type eq 'list'}
     {$value|truncate:{$truncate_value_after}}<br />
 {/if}
+
+{if $type eq 'dn_link'}
+    <a href="index.php?page=display&dn={$value|escape:'url'}&search={$search}">{$value|truncate:{$truncate_value_after}}</a><br />
+{/if}
+
+{if $type eq 'racfaccess'}
+    <tr onclick='document.getElementById("racfid").value = "{$value.id}"; document.getElementById("accesslevel").value = "ACC({$value.acc})";'><td><i class="fa fa-fw fa-user-circle"></i>&nbsp;{$value.id}</td><td><i class="fa fa-fw fa-lock"></i>&nbsp;{$value.acc}</td><td><i name="resdel">&nbsp;</i></tr>
+{/if}
