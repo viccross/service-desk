@@ -68,6 +68,11 @@ $attributes_map = array(
     'state' => array( 'attribute' => 'st', 'faclass' => 'globe', 'type' => 'text' ),
     'street' => array( 'attribute' => 'street', 'faclass' => 'map-marker', 'type' => 'text' ),
     'title' => array( 'attribute' => 'title', 'faclass' => 'certificate', 'type' => 'text' ),
+# RACF resources
+    'resource' => array( 'attribute' => 'profilename', 'faclass' => 'database', 'type' => 'text' ),
+    'owner' => array( 'attribute' => 'racfowner', 'faclass' => 'user-circle-o', 'type' => 'dn_link' ),
+    'uacc' => array( 'attribute' => 'racfuacc', 'faclass' => 'lock', 'type' => 'text' ),
+    'access' => array( 'attribute' => 'racfaccesscontrol', 'faclass' => 'lock', 'type' => 'racfaccess' ),
 );
 
 # Search
