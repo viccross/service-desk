@@ -51,6 +51,7 @@ $attributes_map = array(
     'l' => array( 'attribute' => 'l', 'faclass' => 'globe', 'type' => 'text' ),
     'lastname' => array( 'attribute' => 'sn', 'faclass' => 'user-o', 'type' => 'text' ),
     'mail' => array( 'attribute' => 'mail', 'faclass' => 'envelope-o', 'type' => 'mailto' ),
+    'mailquota' => array( 'attribute' => 'gosamailquota', 'faclass' => 'pie-chart', 'type' => 'bytes' ),
     'manager' => array( 'attribute' => 'manager', 'faclass' => 'user-circle-o', 'type' => 'dn_link' ),
     'mobile' => array( 'attribute' => 'mobile', 'faclass' => 'mobile', 'type' => 'tel' ),
     'modified' => array( 'attribute' => 'modifytimestamp', 'faclass' => 'clock-o', 'type' => 'date' ),
@@ -89,7 +90,7 @@ $datatables_page_length_choices = array(10, 25, 50, 100, -1);
 $datatables_page_length_default = 10;
 $datatables_auto_print = true;
 
-$display_items = array('identifier', 'firstname', 'lastname', 'title', 'businesscategory', 'employeenumber', 'employeetype', 'mail', 'phone', 'mobile', 'fax', 'postaladdress', 'street', 'postalcode', 'l', 'state', 'organizationalunit', 'organization');
+$display_items = array('identifier', 'firstname', 'lastname', 'title', 'businesscategory', 'employeenumber', 'employeetype', 'mail', 'mailquota', 'phone', 'mobile', 'fax', 'postaladdress', 'street', 'postalcode', 'l', 'state', 'organizationalunit', 'organization');
 $display_title = "fullname";
 $display_show_undefined = false;
 $display_password_items = array('pwdchangedtime', 'pwdreset', 'pwdaccountlockedtime', 'pwdfailuretime','pwdpolicysubentry', 'authtimestamp', 'created', 'modified');
@@ -113,6 +114,17 @@ $display_footer = true;
 
 # Debug mode
 $debug = false;
+
+## Post Hook
+# Launch a posthook script after successful password change
+#$posthook = "/usr/share/service-desk/posthook.sh";
+# LDAP attribute used as login in posthook script
+#$posthook_login = "uid";
+# Display posthook error
+#$display_posthook_error = true;
+# Encode passwords sent to posthook script as base64. This will prevent alteration of the passwords if set to true.
+# To read the actual password in the posthook script, use a base64_decode function/tool
+#$posthook_password_encodebase64 = false;
 
 # Smarty
 define("SMARTY", "/usr/share/php/smarty3/Smarty.class.php");
