@@ -22,6 +22,12 @@ To use SSL, set ldaps in the URI:
 
     $ldap_url = "ldaps://localhost";
 
+If RACF Manager is used, you may need to specify a different LDAP URL for the LDAP Server SDBM backend using ``$sdbm_ldap_url``:
+
+.. code-block:: php
+
+    $sdbm_ldap_url = "ldaps://zvmsys.example.com";
+
 To use StartTLS, set ``true`` in ``$ldap_starttls``:
 
 .. code-block:: php
@@ -57,7 +63,7 @@ In a RACF environment (with ``$racf_mode = true``), the LDAP tree pointed to by 
 
     $sdbm_base = "o=ZVMSSI1";
     
-Setting ``$sdbm_base`` also enables full RACF administration access (under development).
+Setting ``$sdbm_base`` also enables the RACF Manager.
 
 User search parameters
 ----------------------
