@@ -75,5 +75,20 @@ $messages['true'] = "Oui";
 $messages['unlockaccount'] = "Débloquer le compte";
 $messages['unlockdate'] = "Date de déblocage automatique :";
 $messages['welcome'] = "Bienvenue sur le guichet de service LDAP Tool Box";
+#
+# RACF labels
+$messages['label_resource'] = "Nom de la ressource";
+$messages['label_owner'] = "Propriétaire de la ressource";
+$messages['label_uacc'] = "Accès universel";
+$messages['label_access'] = "Accès";
+$messages['sdbmmain'] = "RACF Directeur";
+$messages['racfclass'] = "Nom du RACF cours";
+$messages['racfresource'] = "Gérer les ressources générales";
+$messages['resource'] = "Nom de la ressource";
+$messages['racfid'] = "Identifitant d'utilisateur";
+$messages['racfidrequired'] = "Veuillez fournir l'ID utilisateur";
+$messages['resourceaddaccess'] = "Ajouter une entrée ACL";
+$messages['addaccessok'] = "ACL mis à jour";
+$messages['addaccessfailed'] = "Échec de la mise à jour d'ACL";
 
 ?>
