@@ -18,18 +18,29 @@ Password management configurations supported include:
 - OpenLDAP with slapo-rwm rewriting LDAP Bind to SDBM (as described in ITSO Redbooks publication "Security for Linux on z/VM" (SG24-7728)
   - LDBM backend support coming
 
-### RACF Management capability (under development)
-A full-fledged RACF management facility is being developed.  Using the SDBM backend, RACF definitions other than passwords can be managed.  This will allow RACF to be administered in a non-command-line way.  It is intended to augment the function of the DirMaint-RACF connector.
+### RACF Manager
+This provides a graphical view of RACF resources.  Using the SDBM backend of the z/VM (or z/OS) LDAP Server, RACF definitions other than passwords can be managed.  This will allow RACF to be administered in a non-command-line way.  It is intended to augment the function of the DirMaint-RACF connector.
 
 :exclamation: The focus will be on z/VM RACF management in the first instance.  Over time, z/OS RACF may be included.
 
-Planned resources for management include:
-- User definitions and attributes (password/passphrases, SPECIAL, OPERATIONS, AUDITOR, etc)
-- Group definitions, attributes, and connections (incl. GROUP SPECIAL)
-- General resources (create/delete profiles, manage permissions, UACC, etc)
-  - VMMDISK class 
-  - SURROGAT class (logon-by)
-  - VMCMD class
-  - FACILITY class (e.g. ICHCONN)
-  - General RACF options (SETROPTS)
-  
+Support for the following resource profiles is currently available:
+- General resource profiles (e.g. VMMDISK, SURROGAT (logon-by), VMCMD, FACILITY (e.g. ICHCONN) )
+  - view owner
+  - view UACC
+  - manage permissions
+- User profiles
+  - view owner
+  - view default/connect groups
+  - view attributes (SPECIAL, OPERATIONS, AUDITOR, etc)
+  - view create date
+  - view last access date/time
+  - view logon days/times
+
+Planned support includes:
+- User profile updates (attributes, password/passphrase, group connections) 
+- Group profiles
+  - view details
+  - manage
+- General RACF options (SETROPTS)
+  - manage password policy
+  - RACLISTed classes
