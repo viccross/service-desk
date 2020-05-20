@@ -52,4 +52,11 @@ function convert_ldap_date($date) {
 
 }
 
+function get_racf_name_from_dn($dn) {
+
+    $tempresult = ldap_explode_dn($dn, 1);
+    return $tempresult[0];
+
+}
+
 ?>

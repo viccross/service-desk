@@ -82,6 +82,7 @@ $messages['label_uacc'] = "Universal Access";
 $messages['label_access'] = "Access";
 $messages['sdbmmain'] = "RACF Manager";
 $messages['racfclass'] = "RACF class name";
+$messages['racfuser'] = "Manage RACF Users";
 $messages['racfresource'] = "Manage General Resources";
 $messages['resource'] = "Resource name";
 $messages['racfid'] = "User ID";
@@ -89,5 +90,14 @@ $messages['racfidrequired'] = "Please provide User ID";
 $messages['resourceaddaccess'] = "Add ACL Entry";
 $messages['addaccessok'] = "ACL updated";
 $messages['addaccessfailed'] = "ACL update failed";
+$messages['label_racfid'] = "User ID";
+$messages['label_defaultgroup'] = "Default Group";
+$messages['label_connectgroup'] = "Connect Group";
+$messages['label_racfattr'] = "User Attributes";
+$messages['label_authdate'] = "Date created";
+$messages['label_lastaccess'] = "Last access";
+$messages['label_pwdinterval'] = "Password interval";
+$messages['label_logondays'] = "Permitted access days";
+$messages['label_logontime'] = "Access times";
 
 ?>
