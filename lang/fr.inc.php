@@ -83,6 +83,7 @@ $messages['label_uacc'] = "Accès universel";
 $messages['label_access'] = "Accès";
 $messages['sdbmmain'] = "RACF Directeur";
 $messages['racfclass'] = "Nom du RACF cours";
+$messages['racfuser'] = "Gérer les RACF Users";
 $messages['racfresource'] = "Gérer les ressources générales";
 $messages['resource'] = "Nom de la ressource";
 $messages['racfid'] = "Identifitant d'utilisateur";
@@ -90,5 +91,14 @@ $messages['racfidrequired'] = "Veuillez fournir l'ID utilisateur";
 $messages['resourceaddaccess'] = "Ajouter une entrée ACL";
 $messages['addaccessok'] = "ACL mis à jour";
 $messages['addaccessfailed'] = "Échec de la mise à jour d'ACL";
+$messages['label_racfid'] = "Identifitant d'utilisateur";
+$messages['label_defaultgroup'] = "Groupe par défaut";
+$messages['label_connectgroup'] = "Groupe connecté";
+$messages['label_racfattr'] = "Attributs utilisateur";
+$messages['label_authdate'] = "Date créée";
+$messages['label_lastaccess'] = "Dernier accès";
+$messages['label_pwdinterval'] = "Intervalle de mot de passe";
+$messages['label_logondays'] = "Jours d'accès autorisés";
+$messages['label_logontime'] = "Temps d'accès";
 
 ?>
