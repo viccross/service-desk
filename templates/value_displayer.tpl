@@ -23,6 +23,10 @@
     {$value|truncate:{$truncate_value_after}}<br />
 {/if}
 
+{if $type eq 'bytes'}
+    {convert_bytes($value)|truncate:{$truncate_value_after}}<br />
+{/if}
+
 {if $type eq 'dn_link'}
     <a href="index.php?page=display&dn={$value|escape:'url'}&search={$search}">{$value|truncate:{$truncate_value_after}}</a><br />
 {/if}

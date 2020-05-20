@@ -83,6 +83,7 @@ $smarty->assign('search',$search);
 require_once("../lib/smarty.inc.php");
 $smarty->registerPlugin("function", "get_attribute", "get_attribute");
 $smarty->registerPlugin("function", "convert_ldap_date", "convert_ldap_date");
+$smarty->registerPlugin("function", "convert_bytes", "convert_bytes");
 $smarty->registerPlugin("function", "get_racf_name_from_dn", "get_racf_name_from_dn");
 
 #==============================================================================

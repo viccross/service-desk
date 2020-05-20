@@ -3,6 +3,7 @@
 
 require_once("ldap.inc.php");
 require_once("date.inc.php");
+require_once("filesize.inc.php");
 
 function get_attribute($params) {
 
@@ -49,6 +50,12 @@ function get_attribute($params) {
 function convert_ldap_date($date) {
 
     return ldapDate2phpDate( $date );
+
+}
+
+function convert_bytes($bytes) {
+
+    return FileSizeConvert( $bytes );
 
 }
 
