@@ -13,7 +13,6 @@
     </div>
 
     <div class="display col-md-6">
-        {if $use_racfuser}
         <div class="panel panel-info">
             <div class="panel-heading text-center">
                 <p class="panel-title">
@@ -24,7 +23,7 @@
 
              <div class="panel-body">
 
-                 <form id="racfuser" method="post" action="index.php?page=search">
+                 <form id="racfuser" method="post" action="index.php?page=search_racuser">
                      {if $checkpasswordresult eq 'passwordrequired'}
                      <div class="alert alert-warning"><i class="fa fa-fw fa-exclamation-triangle"></i> {$msg_passwordrequired}</div>
                      {/if}
@@ -52,7 +51,6 @@
                 </form>
             </div>
         </div>
-        {/if}
 	
         <div class="panel panel-info">
             <div class="panel-heading text-center">

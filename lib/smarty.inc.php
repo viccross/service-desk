@@ -58,4 +58,12 @@ function convert_bytes($bytes) {
     return FileSizeConvert( $bytes );
 
 }
+
+function get_racf_name_from_dn($dn) {
+
+    $tempresult = ldap_explode_dn($dn, 1);
+    return $tempresult[0];
+
+}
+
 ?>

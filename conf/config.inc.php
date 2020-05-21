@@ -71,9 +71,18 @@ $attributes_map = array(
     'title' => array( 'attribute' => 'title', 'faclass' => 'certificate', 'type' => 'text' ),
 # RACF resources
     'resource' => array( 'attribute' => 'profilename', 'faclass' => 'database', 'type' => 'text' ),
-    'owner' => array( 'attribute' => 'racfowner', 'faclass' => 'user-circle-o', 'type' => 'dn_link' ),
+    'owner' => array( 'attribute' => 'racfowner', 'faclass' => 'user-circle-o', 'type' => 'dn_racuser_link' ),
     'uacc' => array( 'attribute' => 'racfuacc', 'faclass' => 'lock', 'type' => 'text' ),
     'access' => array( 'attribute' => 'racfaccesscontrol', 'faclass' => 'lock', 'type' => 'racfaccess' ),
+    'racfid' => array( 'attribute' => 'racfid', 'faclass' => 'id-badge', 'type' => 'text' ),
+    'defaultgroup' => array( 'attribute' => 'racfdefaultgroup', 'faclass' => 'building-o', 'type' => 'dn_racgrp_link' ),
+    'connectgroup' => array( 'attribute' => 'racfconnectgroupname', 'faclass' => 'building-o', 'type' => 'dn_racgrp_link' ),
+    'racfattr' => array( 'attribute' => 'racfattributes', 'faclass' => 'info-circle', 'type' => 'text' ),
+    'authdate' => array( 'attribute' => 'racfauthorizationdate', 'faclass' => 'calendar-day', 'type' => 'text' ),
+    'lastaccess' => array( 'attribute' => 'racflastaccess', 'faclass' => 'calendar-check', 'type' => 'text' ),
+    'pwdinterval' => array( 'attribute' => 'racfpasswordinterval', 'faclass' => 'calendar-minus', 'type' => 'text' ),
+    'logondays' => array( 'attribute' => 'racflogondays', 'faclass' => 'calendar-check', 'type' => 'text' ),
+    'logontime' => array( 'attribute' => 'racflogontime', 'faclass' => 'clock', 'type' => 'text' ),
 );
 
 # Search
@@ -94,6 +103,13 @@ $display_items = array('identifier', 'firstname', 'lastname', 'title', 'business
 $display_title = "fullname";
 $display_show_undefined = false;
 $display_password_items = array('pwdchangedtime', 'pwdreset', 'pwdaccountlockedtime', 'pwdfailuretime','pwdpolicysubentry', 'authtimestamp', 'created', 'modified');
+
+# RACF User
+$racuser_items = array('racfid', 'owner', 'defaultgroup', 'connectgroup', 'racfattr', 'authdate', 'lastaccess');
+$racuser_title = "racfid";
+$racuser_password_items = array('pwdinterval', 'logondays', 'logontime');
+$racuser_result_items = array('owner', 'lastaccess');
+$racuser_result_title = "racfid";
 
 # Features
 $use_checkpassword = true;
@@ -127,7 +143,7 @@ $debug = false;
 #$posthook_password_encodebase64 = false;
 
 # Smarty
-define("SMARTY", "/usr/share/php/smarty3/Smarty.class.php");
+#define("SMARTY", "/usr/share/php/smarty3/Smarty.class.php");
 
 # Allow to override current settings with local configuration
 if (file_exists (dirname (__FILE__) . '/config.inc.local.php')) {
