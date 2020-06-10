@@ -92,11 +92,34 @@ $smarty->registerPlugin("function", "get_racf_name_from_dn", "get_racf_name_from
 $result = "";
 $page = "welcome";
 if (isset($_GET["page"]) and $_GET["page"]) { $page = $_GET["page"]; }
+if ( $page === "login" ) {
+  if (isset($_GET["next"]) and $_GET["next"]) { 
+    $nextpage = $_GET["next"];
+  } else {
+    $nextpage = "welcome";
+  }
+}
 if ( $page === "checkpassword" and !$use_checkpassword ) { $page = "welcome"; }
 if ( $page === "resetpassword" and !$use_resetpassword ) { $page = "welcome"; }
 if ( $page === "unlockaccount" and !$use_unlockaccount ) { $page = "welcome"; }
+$ds = wp_ldap_check_auth($ldap_url, $ldap_starttls, $ldap_user_base, array("cn"));
+
+if ( $ds !== "success" ) {
+  $result = $ds;
+  $nextpage = $page;
+} else {
+  if ( $nextpage ) {
+    $page = $nextpage;
+    unset($nextpage);
+  }
+}
 if ( file_exists($page.".php") ) { require_once($page.".php"); }
-$smarty->assign('page',$page);
+if ( $nextpage ) {
+  $smarty->assign('page',"login");
+  $smarty->assign('next',$nextpage);
+} else {
+  $smarty->assign('page',$page);
+}
 
 if ($result) {
     $smarty->assign('error',$messages[$result]);
