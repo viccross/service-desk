@@ -19,12 +19,12 @@
               </a>
             </div>
             <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                {if $logout_link}
-                <li>
-                  <a href="{$logout_link}"><i class="fa fa-fw fa-sign-out"></i> {$msg_logout}</a>
-                </li>
-                {/if}
+              <ul class="nav navbar-nav navbar-right">
+              {if $logout_link}
+              <li>
+                <a href="{$logout_link}"><i class="fa fa-fw fa-sign-out"></i> {$msg_logout}</a>
+              </li>
+              {/if}
               </ul>
               <form class="navbar-form navbar-right" role="search" action="index.php?page=search" method="post">
                 <div class="input-group">

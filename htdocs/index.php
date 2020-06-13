@@ -54,6 +54,7 @@ $smarty->assign('ldap_params',array('ldap_url' => $ldap_url, 'ldap_starttls' => 
 $smarty->assign('logo',$logo);
 $smarty->assign('background_image',$background_image);
 $smarty->assign('custom_css',$custom_css);
+if (isset($custom_js)) $smarty->assign('custom_js',$custom_js);
 $smarty->assign('attributes_map',$attributes_map);
 $smarty->assign('date_specifiers',$date_specifiers);
 if (is_array($datatables_page_length_choices)) $datatables_page_length_choices = implode(', ', $datatables_page_length_choices);
@@ -78,6 +79,7 @@ foreach ($messages as $key => $message) {
 $search = "";
 if (isset($_REQUEST["search"]) and $_REQUEST["search"]) { $search = htmlentities($_REQUEST["search"]); }
 $smarty->assign('search',$search);
+if (isset($meta_header_file)) $smarty->assign('meta_header_file',$meta_header_file);
 
 # Register plugins
 require_once("../lib/smarty.inc.php");
@@ -92,11 +94,34 @@ $smarty->registerPlugin("function", "get_racf_name_from_dn", "get_racf_name_from
 $result = "";
 $page = "welcome";
 if (isset($_GET["page"]) and $_GET["page"]) { $page = $_GET["page"]; }
+if ( $page === "login" ) {
+  if (isset($_GET["next"]) and $_GET["next"]) { 
+    $nextpage = $_GET["next"];
+  } else {
+    $nextpage = "welcome";
+  }
+}
 if ( $page === "checkpassword" and !$use_checkpassword ) { $page = "welcome"; }
 if ( $page === "resetpassword" and !$use_resetpassword ) { $page = "welcome"; }
 if ( $page === "unlockaccount" and !$use_unlockaccount ) { $page = "welcome"; }
+$ds = wp_ldap_check_auth($ldap_url, $ldap_starttls, $ldap_user_base, array("cn"));
+
+if ( $ds !== "success" ) {
+  $result = $ds;
+  $nextpage = $page;
+} else {
+  if ( $nextpage ) {
+    $page = $nextpage;
+    unset($nextpage);
+  }
+}
 if ( file_exists($page.".php") ) { require_once($page.".php"); }
-$smarty->assign('page',$page);
+if ( $nextpage ) {
+  $smarty->assign('page',"login");
+  $smarty->assign('next',$nextpage);
+} else {
+  $smarty->assign('page',$page);
+}
 
 if ($result) {
     $smarty->assign('error',$messages[$result]);

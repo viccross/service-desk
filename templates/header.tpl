@@ -27,5 +27,8 @@
 
 </head>
 <body>
+{if $meta_header_file}
+{include file="$meta_header_file"}
+{/if}
 
 <div class="container">
