@@ -54,6 +54,7 @@ $smarty->assign('ldap_params',array('ldap_url' => $ldap_url, 'ldap_starttls' => 
 $smarty->assign('logo',$logo);
 $smarty->assign('background_image',$background_image);
 $smarty->assign('custom_css',$custom_css);
+if (isset($custom_js)) $smarty->assign('custom_js',$custom_js);
 $smarty->assign('attributes_map',$attributes_map);
 $smarty->assign('date_specifiers',$date_specifiers);
 if (is_array($datatables_page_length_choices)) $datatables_page_length_choices = implode(', ', $datatables_page_length_choices);
@@ -78,6 +79,7 @@ foreach ($messages as $key => $message) {
 $search = "";
 if (isset($_REQUEST["search"]) and $_REQUEST["search"]) { $search = htmlentities($_REQUEST["search"]); }
 $smarty->assign('search',$search);
+if (isset($meta_header_file)) $smarty->assign('meta_header_file',$meta_header_file);
 
 # Register plugins
 require_once("../lib/smarty.inc.php");

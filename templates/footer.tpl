@@ -9,7 +9,9 @@
 <script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 <script src="vendor/bootstrap-datepicker/locales/bootstrap-datepicker.{$lang}.min.js"></script>
 <script src="vendor/datatables/datatables.min.js"></script>
-
+{if $custom_js}
+<script src="{$custom_js}"></script>
+{/if}
 {literal}
     <script type="text/javascript">
       $(document).ready( function() {
