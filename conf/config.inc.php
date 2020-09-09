@@ -143,7 +143,7 @@ $debug = false;
 #$posthook_password_encodebase64 = false;
 
 # Smarty
-#define("SMARTY", "/usr/share/php/smarty3/Smarty.class.php");
+define("SMARTY", "/usr/share/php/smarty3/Smarty.class.php");
 
 # Allow to override current settings with local configuration
 if (file_exists (dirname (__FILE__) . '/config.inc.local.php')) {
