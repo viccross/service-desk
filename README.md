@@ -3,7 +3,7 @@
 [![Documentation Status](https://readthedocs.org/projects/service-desk-racf/badge/?version=latest)](https://service-desk-racf.readthedocs.io/en/latest/?badge=latest)
 [![Build Status](https://travis-ci.org/viccross/service-desk-racf.svg?branch=master)](https://travis-ci.org/viccross/service-desk-racf)
 
-Application for support team who need to check, unlock and reset user passwords.
+Application for support team who need to check, lock, unlock and reset user passwords.
 
 ![Screenshot](ltb_sd_screenshot.jpg)
 

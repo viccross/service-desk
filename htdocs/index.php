@@ -3,7 +3,7 @@
 #==============================================================================
 # Version
 #==============================================================================
-$version = 0.1;
+$version = 0.4;
 
 #==============================================================================
 # Configuration
@@ -50,7 +50,7 @@ if ($debug) {
 }
 
 # Assign configuration variables
-$smarty->assign('ldap_params',array('ldap_url' => $ldap_url, 'ldap_starttls' => $ldap_starttls, 'ldap_binddn' => $ldap_binddn, 'ldap_bindpw' => $ldap_bindpw, 'ldap_user_base' => $ldap_user_base, 'ldap_user_filter' => $ldap_user_filter, 'ldap_group_filter' => $ldap_group_filter));
+$smarty->assign('ldap_params',array('ldap_url' => $ldap_url, 'ldap_starttls' => $ldap_starttls, 'ldap_binddn' => $ldap_binddn, 'ldap_bindpw' => $ldap_bindpw, 'ldap_user_base' => $ldap_user_base, 'ldap_user_filter' => $ldap_user_filter));
 $smarty->assign('logo',$logo);
 $smarty->assign('background_image',$background_image);
 $smarty->assign('custom_css',$custom_css);
@@ -68,6 +68,7 @@ $smarty->assign('use_checkpassword',$use_checkpassword);
 $smarty->assign('use_resetpassword',$use_resetpassword);
 $smarty->assign('resetpassword_reset_default',$resetpassword_reset_default);
 $smarty->assign('use_unlockaccount',$use_unlockaccount);
+$smarty->assign('use_lockaccount',$use_lockaccount);
 
 # Assign messages
 $smarty->assign('lang',$lang);

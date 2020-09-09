@@ -116,6 +116,7 @@ $use_checkpassword = true;
 $use_resetpassword = true;
 $resetpassword_reset_default = true;
 $use_unlockaccount = true;
+$use_lockaccount = true;
 
 # Language
 $lang ="en";
@@ -142,12 +143,14 @@ $debug = false;
 # To read the actual password in the posthook script, use a base64_decode function/tool
 #$posthook_password_encodebase64 = false;
 
-# Smarty
-define("SMARTY", "/usr/share/php/smarty3/Smarty.class.php");
-
 # Allow to override current settings with local configuration
 if (file_exists (dirname (__FILE__) . '/config.inc.local.php')) {
     include dirname (__FILE__) . '/config.inc.local.php';
+}
+
+# Smarty
+if (!defined("SMARTY")) {
+    define("SMARTY", "/usr/share/php/smarty3/Smarty.class.php");
 }
 
 ?>
