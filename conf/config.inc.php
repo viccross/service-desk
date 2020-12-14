@@ -103,6 +103,7 @@ $display_items = array('identifier', 'firstname', 'lastname', 'title', 'business
 $display_title = "fullname";
 $display_show_undefined = false;
 $display_password_items = array('pwdchangedtime', 'pwdreset', 'pwdaccountlockedtime', 'pwdfailuretime','pwdpolicysubentry', 'authtimestamp', 'created', 'modified');
+$display_password_expiration_date = true;
 
 # RACF User
 $racuser_items = array('racfid', 'owner', 'defaultgroup', 'connectgroup', 'racfattr', 'authdate', 'lastaccess');
@@ -142,6 +143,10 @@ $debug = false;
 # Encode passwords sent to posthook script as base64. This will prevent alteration of the passwords if set to true.
 # To read the actual password in the posthook script, use a base64_decode function/tool
 #$posthook_password_encodebase64 = false;
+
+# Cache directory
+#$smarty_compile_dir = "/var/cache/service-desk/templates_c";
+#$smarty_cache_dir = "/var/cache/service-desk/cache";
 
 # Allow to override current settings with local configuration
 if (file_exists (dirname (__FILE__) . '/config.inc.local.php')) {
